@@ -1,0 +1,36 @@
+
+<span [hidden]="text1">
+  <h1 class="text-center" style="color: #e68bbe">Welcome to Our Leraning English Page.</h1>
+  <h3 class="text-center" style="color: #e68bbe">If you are for the first time here and want to start learnig English, please register you account and then login.</h3>
+  <h3 class="text-center" style="color: #e68bbe">Meanwhile, if you are already a member of our program, please login to continue your course.</h3>
+</span>
+
+<!--Inputs-->
+<form [formGroup]="inputForm">
+  <div class="row">
+    <div class="col-3 input-group mb-3">
+      <input type="text" class="form-control" placeholder="Enter your email" formControlName="email" [readonly]="flag1">
+    </div>
+    <div class="col-3 input-group mb-3">
+      <input type="password" class="form-control" placeholder="Enter your password" formControlName="password"  [readonly]="flag1">
+    </div>
+    <div class="col-1">
+      <button class="btn btn-success" (click)="login()" [hidden]="flag4" [disabled]="flag5" >Login</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-primary" (click)="register()"[hidden]="flag3">Register</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-danger" (click)="logout()" [hidden]="flag2">Logout</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 offset-1 ">
+      <span [hidden]="text2" style="font-weight: bold; color: red">Please enter email and password for Registration</span>
+      <span [hidden]="text3" style="font-weight: bold; color: red">Please choose another email for registraion</span>
+      <span [hidden]="text4" style="font-weight: bold; color: green">You have succesfully registered your account please log in to continue</span>
+      <span [hidden]="text5" style="font-weight: bold; color: red">Please enter email and password for Logging in</span>
+      <span [hidden]="text6" style="font-weight: bold; color: red">Wrong email or password</span>
+    </div>
+  </div>
+</form>

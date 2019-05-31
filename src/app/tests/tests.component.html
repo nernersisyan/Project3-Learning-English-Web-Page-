@@ -1,0 +1,55 @@
+<div *ngFor="let item of tests[id-1]; let i = index ">
+  <form [formGroup]='form1' class="form-group" [hidden]="hideTests">
+    <ul class="list-group">
+      <fieldset [disabled]="inputDisable[id-1]">
+        <li class="list-group-item list-group-item-danger">
+          <h4>{{item.question}}</h4>
+        </li>
+        <li class="list-group-item">
+          <p><input type="radio" [value]="item.answer1" name="radio{{i}}" formControlName="radio{{i}}">
+            {{item.answer1}}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p><input type="radio" [value]="item.answer2" name="radio{{i}}" formControlName="radio{{i}}">
+            {{item.answer2}}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p><input type="radio" [value]="item.answer3" name="radio{{i}}" formControlName="radio{{i}}">
+            {{item.answer3}}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p><input type="radio" [value]="item.answer4" name="radio{{i}}" formControlName="radio{{i}}">
+            {{item.answer4}}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p><input type="radio" [value]="item.answer5" name="radio{{i}}" formControlName="radio{{i}}">
+            {{item.answer5}}
+          </p>
+        </li>
+      </fieldset>
+    </ul>
+  </form>
+</div>
+
+<div>
+  <button class="btn btn-danger" (click)="finish()" [hidden]="hideButton">Finish Test
+  </button>
+</div>
+<div class="row">
+  <div class="col">
+    <span [hidden]="showPassedText" style="color: green; font-weight: bold">
+      <p>You have succesfully passed N{{id}} Test.</p>
+      <p>Congratulations!!!</p>
+    </span>
+    <span [hidden]="showFailedText" style="color: red; font-weight: bold">
+      <p>You have failed N{{id}} Test.</p>
+      <p>Please listen and read Level {{id}} again and then try the Test {{id}}</p>
+      <p>Good Luck!!!</p>
+    </span>
+  </div>
+</div>
+

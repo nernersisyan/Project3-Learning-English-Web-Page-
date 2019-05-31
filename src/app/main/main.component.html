@@ -1,0 +1,26 @@
+<!--[queryParams]="{lesson1: item.lesson1, lesson2: item.lesson2, lesson3: item.lesson3, lesson4: item.lesson4, lesson5: item.lesson5, audio1: item.audio1, audio2: item.audio2, audio3: item.audio3,audio4: item.audio4, audio5: item.audio5, armText1: item.armText1,armText2: item.armText2,armText3: item.armText3,armText4: item.armText4,armText5: item.armText5, englishText1: item.englishText1, englishText2: item.englishText2, englishText3: item.englishText3, englishText4: item.englishText4, englishText5: item.englishText5}">
+
+<!--Left side-->
+<div class="row" >
+
+  <div class="col-sm-3" >
+    <div class="alert alert-danger" role="alert" *ngFor="let item of data; let i=index">
+      <div [ngClass]="{'pointer': !this.currentUser[0].tests[i]}" (click)="!text1" >
+        <a [routerLink]="['/', item.id]" >
+          {{item.level}}</a>
+        <hr>
+        <a [routerLink]="['/tests', item.id]">
+          {{item.tests}}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-7">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+
+
+
